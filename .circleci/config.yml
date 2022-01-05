@@ -1,0 +1,14 @@
+# .circleci/config.yml
+version: 2.1 
+jobs:  
+  build-medium:    
+    resource_class: arm.medium
+    docker:
+      - image: fedora
+    steps:      
+      - run: uname -a      
+      - run: echo "Hello, Arm!"   
+workflows:  
+  build:    
+    jobs:      
+      - build-medium
