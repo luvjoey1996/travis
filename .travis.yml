@@ -1,0 +1,12 @@
+arch: arm64
+os: linux
+
+services:
+  - docker
+
+before_install:
+  - docker pull fedora
+
+script:
+  - docker run fedora uname -a
+  - docker ps -a
