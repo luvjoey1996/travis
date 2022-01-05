@@ -8,9 +8,10 @@ jobs:
     resource_class: arm.medium
     working_directory: ~/
     steps:      
-      - run: docker pull fedora
+#      - run: docker pull fedora
       - run: docker images
       - run: pwd
+      - run: sudo apt install tree
       - run: tree
 workflows:  
   build:    
