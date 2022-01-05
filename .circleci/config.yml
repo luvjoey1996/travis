@@ -11,7 +11,7 @@ jobs:
       - run: docker pull fedora
       - run: docker images
       - run: pwd
-      - run: ls
+      - run: tree
 workflows:  
   build:    
     jobs:      
