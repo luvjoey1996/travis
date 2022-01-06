@@ -105,7 +105,7 @@ bash
 bind-utils
 bind-libs
 bind-license
-bind-libs-site
+bind-libs-lite
 dhclient
 centos-release
 iproute
