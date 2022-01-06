@@ -7,13 +7,12 @@ jobs:
       docker_layer_caching: true
     resource_class: arm.medium
     working_directory: ~/
-    steps:      
-#      - run: docker pull fedora
-      - run: docker images
-      - run: pwd
-      - run: sudo apt install tree
-      - run: tree
-workflows:  
+    steps:
+      - checkout
+      - run: docker login -u luvjoey -p ${DOCKER_TOKEN}
+      - run: docker build -t luvjoey/fedora_anaconda travis/fedora_anaconda
+      - run: docker push luvjoey/fedora_anaconda
+workflows:
   build:    
     jobs:      
       - build-image
