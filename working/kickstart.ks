@@ -103,6 +103,10 @@ rm /var/run/nologin
 %packages --excludedocs --nocore --instLangs=en
 bash
 bind-utils
+bind-libs
+bind-license
+bind-libs-site
+dhclient
 centos-release
 iproute
 iputils
@@ -118,7 +122,6 @@ yum-plugin-ovl
 yum-utils
 GeoIP
 -*firmware
--bind-license
 -firewalld-filesystem
 -freetype
 -gettext*
