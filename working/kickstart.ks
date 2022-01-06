@@ -1,8 +1,7 @@
 #version=DEVEL
 # Use network installation
-url --url="https://vault.centos.org/altarch/7.4.1708/os/aarch64/"
-repo --name="CentOS" --baseurl=https://vault.centos.org/altarch/7.4.1708/os/aarch64/ --cost=100
-cmdline
+url --url="https://archive.kernel.org/centos-vault/altarch/7.4.1708/os/aarch64/"
+repo --name="CentOS" --baseurl=https://archive.kernel.org/centos-vault/altarch/7.4.1708/os/aarch64/ --cost=100
 # Firewall configuration
 firewall --disabled
 firstboot --disable
