@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: docker login -u luvjoey -p ${DOCKER_TOKEN}
-      - run: docker build -t luvjoey/fedora_anaconda travis/fedora_anaconda
+      - run: docker build -t luvjoey/fedora_anaconda fedora_anaconda
       - run: docker push luvjoey/fedora_anaconda
 workflows:
   build:    
