@@ -121,8 +121,8 @@ yum
 yum-plugin-ovl
 yum-utils
 GeoIP
+firewalld-filesystem
 -*firmware
--firewalld-filesystem
 -freetype
 -gettext*
 -kernel*
