@@ -9,16 +9,22 @@ jobs:
     working_directory: ~/travis
     steps:
       - checkout
-      - run: curl https://vault.centos.org/altarch/7.4.1708/os/aarch64/images/boot.iso -o working/boot.iso
-      - run: |
-        sudo docker run -itd --privileged=true --name fedora -v `pwd`/working:/root/working \
-        --user 0:0 luvjoey/fedora_anaconda /usr/sbin/init
-      - run: |
-        sudo docker exec -it fedora livemedia-creator --make-tar --no-virt --nomacboot --iso=/root/working/boot.iso \
-        --image-name=/root/working/centos-7.4.1708-docker.tar.xz --project="Centos 7 Docker" --releasever="7" \
-        --ks=/root/working/kickstart.ks
+      - run:
+          name: Fetch boot.iso
+          command: curl https://vault.centos.org/altarch/7.4.1708/os/aarch64/images/boot.iso -o working/boot.iso
+      - run:
+          name: Creating container
+          command: |
+            sudo docker run -itd --privileged=true --name fedora -v `pwd`/working:/root/working \
+            --user 0:0 luvjoey/fedora_anaconda /usr/sbin/init
+      - run:
+          name: Building image
+          command: |
+            sudo docker exec -it fedora livemedia-creator --make-tar --no-virt --nomacboot --iso=/root/working/boot.iso \
+            --image-name=/root/working/centos-7.4.1708-docker.tar.xz --project="Centos 7 Docker" --releasever="7" \
+            --ks=/root/working/kickstart.ks
       - store_artifacts:
-          path: /home/circleci/travis/working/centos-7.1708-docker.tar.xz
+          path: /home/circleci/travis/working/centos-7.4.1708-docker.tar.xz
 
 workflows:
   build:    
