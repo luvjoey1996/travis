@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Fetch boot.iso
-          command: curl https://mirrors.aliyun.com/centos-vault/altarch/7.4.1708/os/aarch64/images/boot.iso -o working/boot.iso
+          command: curl https://mirror.math.princeton.edu/pub/centos-vault/altarch/7.4.1708/os/aarch64/images/boot.iso -o working/boot.iso
       - run:
           name: Creating container
           command: |
