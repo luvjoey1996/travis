@@ -5,7 +5,6 @@ repo --name="CentOS" --baseurl=https://mirror.math.princeton.edu/pub/centos-vaul
 # Firewall configuration
 firewall --disabled
 firstboot --disable
-ignoredisk --only-use=sda
 # Keyboard layouts
 # old format: keyboard us
 # new format:
