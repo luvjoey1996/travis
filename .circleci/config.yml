@@ -6,9 +6,9 @@ jobs:
       image: ubuntu-2004:202111-02
       docker_layer_caching: true
     resource_class: arm.medium
-    working_directory: ~/
+#    working_directory: ~/travis
     steps:
-      - checkout
+      - run: ls
       - run: docker login -u luvjoey -p ${DOCKER_TOKEN}
       - run: docker build -t luvjoey/fedora_anaconda travis/fedora_anaconda
       - run: docker push luvjoey/fedora_anaconda
