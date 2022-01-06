@@ -2,11 +2,11 @@ arch: arm64
 os: linux
 
 services:
-  - docker
+  - working
 
 before_install:
-  - docker pull fedora
+  - working pull fedora
 
 script:
-  - docker run fedora uname -a
-  - docker ps -a
+  - working run fedora uname -a
+  - working ps -a

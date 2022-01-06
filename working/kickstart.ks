@@ -1,7 +1,7 @@
 #version=DEVEL
 # Use network installation
-url --url="http://mirrors.kernel.org/centos/7/os/x86_64/"
-repo --name="CentOS" --baseurl=http://mirror.centos.org/centos/7/os/x86_64/ --cost=100
+url --url="https://vault.centos.org/altarch/7.4.1708/os/aarch64/"
+repo --name="CentOS" --baseurl=https://vault.centos.org/altarch/7.4.1708/os/aarch64/ --cost=100
 cmdline
 # Firewall configuration
 firewall --disabled
@@ -118,8 +118,8 @@ vim-minimal
 yum
 yum-plugin-ovl
 yum-utils
+GeoIP
 -*firmware
--GeoIP
 -bind-license
 -firewalld-filesystem
 -freetype
